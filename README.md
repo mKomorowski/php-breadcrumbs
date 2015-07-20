@@ -26,6 +26,12 @@ Rendering breadcrumbs can be achieved by passing custom URI path.
 ```php
 echo $breadCrumbsRender->build('/library/data')
 ```
+
+By default Render class will always prepend breadcrumbs with 'Home' crumb linking to '/' root path. To disable 'Home' crumb:
+```php
+echo $breadCrumbsRender->disableHomeCrumb()
+```
+
 Passsing `php null` will render `php $_SERVER['REQUEST_URI']` parameter
 ```php
 echo $breadCrumbsRender->build()

@@ -20,4 +20,11 @@ class RenderTests extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals("<ol class='breadcrumb'><li><a href='/' title='Home'>Home</a></li><li><a href='/library/' title='Library'>Library</a></li><li class='active'>Data</li></ol>", $this->breadcrumbsRender->build('/library/data'));
     }
+
+    public function testRenderHTMLContentWithDisabledHomeCrumb()
+    {
+        $this->breadcrumbsRender->disableHomeCrumb();
+
+        $this->assertEquals("<ol class='breadcrumb'><li><a href='/library/' title='Library'>Library</a></li><li class='active'>Data</li></ol>", $this->breadcrumbsRender->build('/library/data'));
+    }
 }

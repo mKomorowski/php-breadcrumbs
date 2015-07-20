@@ -2,6 +2,8 @@
 
 class Render
 {
+    protected $homeCrumb = "<a href='/' title='Home'>Home</a>";
+
     protected $containerElement = 'ol';
 
     protected $containerElementClass = 'breadcrumb';
@@ -10,15 +12,20 @@ class Render
 
     protected $itemElementActiveClass = 'active';
 
+    public function disableHomeCrumb()
+    {
+        $this->homeCrumb = false;
+    }
+
     public function build($path = false)
     {
         $path = ($path) ? $path : $this->requestURI();
 
         $path = array_filter(explode('/', $path, PHP_URL_PATH));
 
-        $breadcrumbs = array(
-            $this->buildElement($this->itemElement, "<a href='/' title='Home'>Home</a>")
-        );
+        $breadcrumbs = array();
+
+        if($this->homeCrumb) array_push($breadcrumbs, $this->buildElement($this->itemElement, $this->homeCrumb));
 
         $lastCrumb = end($path);
 

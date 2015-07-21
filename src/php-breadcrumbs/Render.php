@@ -10,6 +10,8 @@ class Render
 
     protected $itemElement = 'li';
 
+    protected $itemElementClass = false;
+
     protected $itemElementActiveClass = 'active';
 
     public function setHomeCrumb($homeCrumb)
@@ -45,7 +47,7 @@ class Render
                 continue;
             }
 
-            array_push($breadcrumbs, $this->buildElement($this->itemElement, "<a href='/".$href."' title='".ucfirst($crumb)."'>".ucfirst($crumb)."</a>"));
+            array_push($breadcrumbs, $this->buildElement($this->itemElement, "<a href='/".$href."' title='".ucfirst($crumb)."'>".ucfirst($crumb)."</a>", $this->itemElementClass));
         }
 
         return $this->buildElement($this->containerElement, implode('', $breadcrumbs), $this->containerElementClass);

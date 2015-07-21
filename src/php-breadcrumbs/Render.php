@@ -12,6 +12,11 @@ class Render
 
     protected $itemElementActiveClass = 'active';
 
+    public function setHomeCrumb($homeCrumb)
+    {
+        $this->homeCrumb = $homeCrumb;
+    }
+
     public function disableHomeCrumb()
     {
         $this->homeCrumb = false;

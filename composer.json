@@ -19,7 +19,7 @@
     },
     "autoload":{
       "psr-4":{
-        "mKomorowski\\Breadcrumbs\\":["src/php-breadcrumbs"]
+        "mKomorowski\\Breadcrumbs\\":["src/php-breadcrumbs", "src/php-breadcrumbs/Markups"]
       }
     }
 }

@@ -7,7 +7,6 @@
 
 abstract class MarkupSettings
 {
-
     protected $containerElement = 'ul';
     protected $containerElementClass = false;
     protected $itemElement = 'li';

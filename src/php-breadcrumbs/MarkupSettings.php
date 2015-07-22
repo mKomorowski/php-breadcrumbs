@@ -5,41 +5,57 @@
  * @package mKomorowski\Breadcrumbs
  */
 
-interface MarkupSettings
+abstract class MarkupSettings
 {
-    /**
-     * @return string
-     */
 
-    public function getHomeCrumb();
-
-    /**
-     * @return string
-     */
-
-    public function getContainerElement();
+    protected $containerElement = 'ul';
+    protected $containerElementClass = false;
+    protected $itemElement = 'li';
+    protected $itemElementClass = false;
+    protected $itemElementActiveClass = false;
 
     /**
      * @return string
      */
 
-    public function getContainerElementClass();
+    public function getContainerElement()
+    {
+        return $this->containerElement;
+    }
 
     /**
      * @return string
      */
 
-    public function getItemElement();
+    public function getContainerElementClass()
+    {
+        return $this->containerElementClass;
+    }
 
     /**
      * @return string
      */
 
-    public function getItemElementClass();
+    public function getItemElement()
+    {
+        return $this->itemElement;
+    }
 
     /**
      * @return string
      */
 
-    public function getItemElementActiveClass();
+    public function getItemElementClass()
+    {
+        return $this->itemElementClass;
+    }
+
+    /**
+     * @return string
+     */
+
+    public function getItemElementActiveClass()
+    {
+        return $this->itemElementActiveClass;
+    }
 }

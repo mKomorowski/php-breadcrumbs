@@ -29,7 +29,12 @@ echo $breadCrumbsRender->build('/library/data')
 
 By default Render class will always prepend breadcrumbs with 'Home' crumb linking to '/' root path. To disable 'Home' crumb:
 ```php
-echo $breadCrumbsRender->disableHomeCrumb()
+$breadCrumbsRender->disableHomeCrumb()
+```
+
+Edit 'Home' crumb by:
+```php
+$breadcrumbsRender->setHomeCrumb("<a href='/'>Main</a>");
 ```
 
 Passsing `php null` will render `php $_SERVER['REQUEST_URI']` parameter
